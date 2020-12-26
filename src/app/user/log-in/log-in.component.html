@@ -1,0 +1,21 @@
+<form #form='ngForm' class="mb-4" autocomplete="off">
+    <!--this is use to get the user name and password-->
+    <div class="form-group">
+        <label>UserName</label>
+        <input class="form-control form-control-lg" placeholder="User Name" name="loginUserName"
+         #loginUserName="ngModel" [(ngModel)]="services.loginData.loginUserName" 
+          required maxlength="100" minlength="1" >    
+    </div>
+    <!--Use to get the user password-->
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control form-control-lg" placeholder="Password" name="loginPassword" 
+        #loginPassword="ngModel" [(ngModel)]="services.loginData.loginPassword"
+        required maxlength="100" minlength="1">
+    </div>
+
+    <!--This is use for the submit button-->
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid" >SIGN IN</button>
+    </div>
+</form>
