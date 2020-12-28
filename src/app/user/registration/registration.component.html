@@ -1,0 +1,46 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden"  name="accountId" [value]="service.formData.accountId">
+    <!--This is for the formgroup, whill will get the user name -->
+    <div class="form-group">
+        <label>User Name</label>
+        <input class="form-control form-control-lg" placeholder="User Name" name="fullName" 
+         #fullName="ngModel" [(ngModel)]="service.formData.fullName"
+         required maxlength="100" minlength="1" >
+    </div>
+    <div class="form-row">
+        <!--get the password -->
+        <div class="form-group col-md-6">
+            <label >Password</label>
+            <input type="password" class="form-control form-control-lg" placeholder="password" name="userPassword" 
+            #passWord="ngModel"[(ngModel)]="service.formData.userPassword"
+            required maxlength="100" minlength="1" >
+        </div>
+
+         <!--Get the confirm password-->
+         <div class="form-group col-md-6">
+            <label >Confirm Password</label>
+            <input type="password" ngValidateEqual="userPassword" class="form-control form-control-lg" placeholder="confirmPassword" name="confirmPassword" 
+            #confirmPassword="ngModel" [(ngModel)]="service.formData.confirmPassword"
+            required maxlength="100" minlength="1" >
+        </div>
+            <!--Check if the both password is matched -->
+        <div *ngIf="(confirmPassword.dirty || confirmPassword.touched) && confirmPassword.invalid">
+            <p class="warning-text" *ngIf="confirmPassword.hasError('notEqual') && passWord.valid"> <!--this one is using to checking if the password with the confirm password is matched-->
+             Passwords Don't Match
+             </p>
+        </div>
+    </div> <!--end of the form-row-->
+    
+    <!--get the user Email-->
+    <div class="form-group">
+        <label >Gmail</label>
+        <input class="form-control form-control-lg" placeholder=" Gmail" name="gmailAccount" 
+        #gmaiAccount="ngModel" [(ngModel)]="service.formData.gmailAccount"
+        required maxlength="100" minlength="1">
+    </div>
+    
+    <!--This is for a submitted button for sign up-->
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SIGN UP</button>
+    </div>
+</form>
