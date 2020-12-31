@@ -19,7 +19,7 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit(form:NgForm) {//using for the log in form
-    this.services.login().subscribe(
+    this.services.login(form.value).subscribe(
       (res:any) => {
         localStorage.setItem('token',res.token);
         console.log("Top");//debugging

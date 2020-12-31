@@ -9,10 +9,10 @@ export class LoginDetailService {
 
   constructor(private http: HttpClient) { }
   loginData: LoginDetail = new LoginDetail();
-  readonly baseURL = 'http://localhost:55570/api/AccountDetails';
+  readonly baseURL = 'http://localhost:55570/api/ApplicationUser';
      
-  login() {
-    return this.http.post(this.baseURL + '/login',this.loginData);
+  login(formValue:any) {
+    return this.http.post(this.baseURL + '/login',formValue);
   }
 
 }
