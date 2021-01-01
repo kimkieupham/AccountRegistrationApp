@@ -23,11 +23,12 @@ export class LogInComponent implements OnInit {
       (res:any) => {
         localStorage.setItem('token',res.token);
         console.log("Top");//debugging
+        this.toastr.success('Account Login Successful');
         this.router.navigateByUrl('/header');
       },
       err =>{
-        if(err.status == 400)
-        this.toastr.error('Incorrect username or password','Authentication failed');
+        if(err.status == 400)//which mean that the either password or username is incorrect and it is the bad request
+        this.toastr.error('Incorrect username or password');
         else 
         console.log("go here");//debugging
         console.log(err);

@@ -74,3 +74,10 @@
   .tab-header h2:focus {
       outline: none;
   }
+ .full-width-image {
+   max-width: 100%;
+   height: auto;
+   background-size:cover;
+   background-position:center center;
+}
+
