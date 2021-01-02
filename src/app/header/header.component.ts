@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 //we need to add the function logout to navigate 
 onLogout() {
+  localStorage.removeItem('token');//this is use the 
   this.router.navigate(['/user/login']);//since the fullpatch is connect to the login the we can just navigate back to the login when the user want  to log out 
 }
 }

@@ -13,8 +13,11 @@ import { Browser } from 'protractor';
 import { LogInComponent } from './user/log-in/log-in.component';
 import { HeaderComponent } from './header/header.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
+import { JwtModule } from '@auth0/angular-jwt';
 
-
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 
 @NgModule({
   declarations: [
@@ -31,6 +34,13 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ValidateEqualModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["example.com"],
+        disallowedRoutes: ["/header"],
+      },
+    }),
     AppRoutingModule
   ],
   providers: [],
