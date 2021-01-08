@@ -13,7 +13,11 @@
         #loginPassword="ngModel" [(ngModel)]="services.loginData.loginPassword"
         required maxlength="100" minlength="1">
     </div>
-
+    <!--This is use for forgetting password case-->
+    <div>
+        <a [routerLink]="['/forgotPassword']"> Forgot Password ? </a>
+    </div>
+    <br> <!--this is using for newline-->
     <!--This is use for the submit button-->
     <div class="form-group">
         <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid" >SIGN IN</button>

@@ -14,6 +14,7 @@ import { LogInComponent } from './user/log-in/log-in.component';
 import { HeaderComponent } from './header/header.component';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -25,7 +26,8 @@ export function tokenGetter() {
     UserComponent,
     RegistrationComponent,
     LogInComponent,
-    HeaderComponent
+    HeaderComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
