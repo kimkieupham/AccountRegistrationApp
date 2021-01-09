@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { LogInComponent } from './user/log-in/log-in.component';
 import {RegistrationComponent } from './user/registration/registration.component';
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 import { UserComponent } from './user/user.component';
 //import {AuthService as AuthGuard } from './auth/auth.service';
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
  // {path:'header',component:HeaderComponent}
 
  {path:'header',component:HeaderComponent, canActivate:[AuthGuard]},
- {path:'forgotPassword',component:ForgotPasswordComponent}
+ {path:'forgotPassword',component:ForgotPasswordComponent},
+ {path:'resetPassword',component:ResetPasswordComponent}
 ];
 
 @NgModule({

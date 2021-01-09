@@ -2,8 +2,10 @@
 <nav class="navbar navbar-dark  py-3">
     <h2 class="text-center">Welcome to Not In the Mood Coffee Shop</h2>
     <h4 class="text-center"> Congratulation! You have logged in successful  </h4>
-    <!--We add the log out button here -->
-    <button class="btn btn-danger my-2 my-sm-0 btn-lg float-right" (click)="onLogout()">Logout</button>
+    <!--We add the log out button here and the change password will be display as the drop down menu -->
+     <a class="nav-link" href="resetPassword">ResetPassword </a>
+    <!--  this is use for the log out <button class="btn btn-danger my-2 my-sm-0 btn-lg float-right" (click)="onLogout()">Logout</button>   -->
+    <a class="nav-link" (click)="onLogout()">Logout</a>   
 </nav>
 <!--This is using to embedded the image into the GUI-->
 <div>
