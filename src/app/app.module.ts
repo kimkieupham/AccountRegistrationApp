@@ -16,6 +16,7 @@ import { ValidateEqualModule } from 'ng-validate-equal';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
+import { ResetGmailComponent } from './user/reset-gmail/reset-gmail.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -29,7 +30,8 @@ export function tokenGetter() {
     LogInComponent,
     HeaderComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ResetGmailComponent
   ],
   imports: [
     BrowserModule,

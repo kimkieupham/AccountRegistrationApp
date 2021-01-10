@@ -14,7 +14,6 @@ export class PasswordDetailService {
 
   putPasswordDetail() {
     return this.http.put(`${this.baseURL}`,this.passwordData);
-
   }
 
 }
